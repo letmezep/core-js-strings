@@ -212,8 +212,14 @@ function removeLastOccurrences(str, value) {
  *   sumOfCodes('') => 0
  *   sumOfCodes() => 0
  */
-function sumOfCodes(/* str */) {
-  throw new Error('Not implemented');
+function sumOfCodes(str) {
+  let res = 0;
+  if (str !== undefined && str !== null) {
+    for (let i = 0; i < str.length; i += 1) {
+      res += str.charCodeAt(i);
+    }
+  }
+  return res;
 }
 
 /**
@@ -262,7 +268,6 @@ function endsWith(str, substr) {
 function formatTime(minutes, seconds) {
   let m = minutes.toString();
   let s = seconds.toString();
-
   if (minutes < 10) {
     m = m.padStart(2, '0');
   }
@@ -271,7 +276,6 @@ function formatTime(minutes, seconds) {
   }
   s = s.padStart(3, ':');
   const time = m.padEnd(5, s);
-
   return time;
 }
 
@@ -285,8 +289,13 @@ function formatTime(minutes, seconds) {
  *   reverseString('abcdef') => 'fedcba'
  *   reverseString('12345') => '54321'
  */
-function reverseString(/* str */) {
-  throw new Error('Not implemented');
+function reverseString(str) {
+  const l = str.length;
+  let str1 = '';
+  for (let i = l - 1; i >= 0; i -= 1) {
+    str1 += str[i];
+  }
+  return str1;
 }
 
 /**
