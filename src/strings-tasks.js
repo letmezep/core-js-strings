@@ -238,13 +238,13 @@ function formatTime(minutes, seconds) {
   let s = seconds.toString();
 
   if (minutes < 10) {
-    m = m.padStart(1, '0');
+    m = m.padStart(2, '0');
   }
   if (seconds < 10) {
-    s = seconds.padStart(1, '0');
+    s = s.padStart(2, '0');
   }
-  s = s.padStart(1, ':');
-  const time = m.padEnd(1, s);
+  s = s.padStart(3, ':');
+  const time = m.padEnd(5, s);
 
   return time;
 }
