@@ -20,8 +20,8 @@
  *   getStringLength(undefined) => 0
  */
 function getStringLength(value) {
-  let l = value;
-  if (value !== null && value !== 'undefined' && value !== 0) {
+  let l = 0;
+  if (value !== null && value !== 0 && value !== undefined) {
     l = value.length;
   }
   return l;
