@@ -19,8 +19,12 @@
  *   getStringLength(null) => 0
  *   getStringLength(undefined) => 0
  */
-function getStringLength(/* value */) {
-  throw new Error('Not implemented');
+function getStringLength(value) {
+  let l = value;
+  if (value !== null && value !== 'undefined' && value !== 0) {
+    l = value.length;
+  }
+  return l;
 }
 
 /**
@@ -83,8 +87,8 @@ function getFirstChar(value) {
  *   removeLeadingAndTrailingWhitespaces('cat ') => 'cat'
  *   removeLeadingAndTrailingWhitespaces('\t\t\tHello, World! ') => 'Hello, World!'
  */
-function removeLeadingAndTrailingWhitespaces(/* value */) {
-  throw new Error('Not implemented');
+function removeLeadingAndTrailingWhitespaces(value) {
+  return value.trim();
 }
 
 /**
@@ -225,8 +229,20 @@ function endsWith(str, substr) {
  *   formatTime(0, 45) => "00:45"
  *   formatTime(0, 0) => "00:00"
  */
-function formatTime(/* minutes, seconds */) {
-  throw new Error('Not implemented');
+function formatTime(minutes, seconds) {
+  let m = minutes.toString();
+  let s = seconds.toString();
+
+  if (minutes < 10) {
+    m = m.padStart(1, '0');
+  }
+  if (seconds < 10) {
+    s = seconds.padStart(1, '0');
+  }
+  s = s.padStart(1, ':');
+  const time = m.padEnd(1, s);
+
+  return time;
 }
 
 /**
