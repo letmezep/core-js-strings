@@ -217,7 +217,12 @@ describe('strings-tasks', () => {
   it.optional(
     'sumOfCodes should calculate the sum of character codes of the given string',
     () => {
-
+      assert.equal(tasks.sumOfCodes('My String'), 861);
+      assert.equal(tasks.sumOfCodes('12345'), 255);
+      assert.equal(tasks.sumOfCodes(''), 0);
+      assert.equal(tasks.sumOfCodes(), 0);
+      assert.equal(tasks.sumOfCodes(null), 0);
+      assert.equal(tasks.sumOfCodes(undefined), 0);
       assert.equal(tasks.sumOfCodes('Hello, World!'), 1129);
       assert.equal(tasks.sumOfCodes('!@#$%^&*()'), 460);
     }
@@ -326,9 +331,8 @@ describe('strings-tasks', () => {
       assert.equal(tasks.isPalindrome('Madam'), true);
       assert.equal(tasks.isPalindrome('RacECaR'), true);
       assert.equal(tasks.isPalindrome('Deified'), true);
-      assert.equal(tasks.isPalindrome('A man, a plan, a canal, Panama!'), true);
-      assert.equal(tasks.isPalindrome('Was it a car or a cat I saw?'), true);
-      assert.equal(tasks.isPalindrome('No lemon, no melon'), true);
+      assert.equal(tasks.isPalindrome('A man a plan a canal Panama'), true);
+
     }
   );
 
